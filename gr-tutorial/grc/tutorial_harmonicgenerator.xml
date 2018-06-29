@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<block>
+  <name>harmonicgenerator</name>
+  <key>tutorial_harmonicgenerator</key>
+  <category>[tutorial]</category>
+  <import>import tutorial</import>
+  <make>tutorial.harmonicgenerator($n_outputs, $vec_length, $ampl, $f0, $n_harmonics, $samprate)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>n_outputs</name>
+    <key>n_outputs</key>
+    <type>int</type>
+  </param>
+  
+  <param>
+    <name>vec_length</name>
+    <key>vec_length</key>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>ampl</name>
+    <key>ampl</key>
+    <type>float_vector</type>
+  </param>
+
+  <param>
+    <name>f0</name>
+    <key>f0</key>
+    <type>float</type>
+  </param>
+
+  <param>
+    <name>n_harmonics</name>
+    <key>n_harmonics</key>
+    <type>int_vector</type>
+  </param>
+
+  <param>
+    <name>samprate</name>
+    <key>samprate</key>
+    <type>int</type>
+  </param>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  
+  <source>
+    <name>out</name>
+    <type><!-- e.g. int, float, complex, byte, short, xxx_vector, ...--></type>
+    <nports>$n_outputs</nports>
+  </source>
+
+  <!-- <source>
+    <name>out1</name>
+    <type>float</type>
+  </source> -->
+
+</block>
