@@ -49,3 +49,6 @@ class harmonicgenerator(gr.sync_block):
             # out[0] = numpy.sin(2*numpy.pi*self.f0*self.i/self.samprate)
             # out[1] = numpy.sin(2*numpy.pi*self.n*self.f0*self.i/self.samprate)
         return len(output_items[:])
+
+    def set_amplitude(self, amplitude):
+        self.ampl = amplitude

@@ -10,6 +10,9 @@
        * name
        * key (makes the value accessible as $keyname, e.g. in the make node)
        * type -->
+
+  <callback>set_amplitude($ampl)</callback>
+
   <param>
     <name>n_outputs</name>
     <key>n_outputs</key>
