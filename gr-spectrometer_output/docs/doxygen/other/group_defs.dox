@@ -1,0 +1,7 @@
+/*!
+ * \defgroup block GNU Radio SPECTROMETER_OUTPUT C++ Signal Processing Blocks
+ * \brief All C++ blocks that can be used from the SPECTROMETER_OUTPUT GNU Radio
+ *        module are listed here or in the subcategories below.
+ *
+ */
+

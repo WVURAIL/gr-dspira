@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<block>
+  <name>spectrometer_output</name>
+  <key>spectrometer_output_spectrometer_output</key>
+  <category>[spectrometer_output]</category>
+  <import>import spectrometer_output</import>
+  <make>spectrometer_output.spectrometer_output($f0_gui, $samp_rate, $ampl_gui, $text_gui, $save_button_gui)</make>
+
+  <callback>set_save_button($f0_gui, $ampl_gui, $text_gui, $save_button_gui)</callback>
+
+   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>f0_gui</name>
+    <key>f0_gui</key>
+    <type>float</type>
+  </param>
+
+  <param>
+    <name>samp_rate</name>
+    <key>samp_rate</key>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>ampl_gui</name>
+    <key>ampl_gui</key>
+    <type>float</type>
+  </param>
+
+  <param>
+    <name>text_gui</name>
+    <key>text_gui</key>
+    <type>string</type>
+  </param>
+
+  <param>
+    <name>save_button_gui</name>
+    <key>save_button_gui</key>
+    <type>bool</type>
+  </param>
+
+  <source>
+    <name>output</name>
+    <type>float</type>
+  </source>
+
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+
+  <!--
+  <param>
+    <name>Input type</name>
+    <key>intype</key>
+		<type>enum</type>
+		<option>
+			<name>Complex</name>
+			<key>complex</key>
+			<opt>fcn:complex</opt>
+		</option>
+		<option>
+			<name>Float</name>
+			<key>float</key>
+			<opt>fcn:float</opt>
+		</option>
+		<option>
+			<name>Int</name>
+			<key>int</key>
+			<opt>fcn:int</opt>
+		</option>
+  </param>
+
+  <param>
+    <name>vec_length</name>
+    <key>vec_length</key>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>filename</name>
+    <key>filename</key>
+    <type>string</type>
+  </param> -->
+
+<!--  The following <param> blocks were mistakenly created thinking the 
+spectrometer_output block would include these parameters. But instead, 
+we are going to have these parameters input individually using the 
+GUI Entry block.
+  <param>
+    <name>filename</name>
+    <key>filename</key>
+    <type>string</type>
+  </param>
+
+  <param>
+    <name>pointing</name>
+    <key>pointing</key>
+    <type>string</type>
+  </param>
+
+  <param>
+    <name>freq_start</name>
+    <key>freq_start</key>
+    <type>float</type>
+  </param>
+
+  <param>
+    <name>freq_step</name>
+    <key>freq_step</key>
+    <type>float</type>
+  </param>
+  
+  <param>
+    <name>notes</name>
+    <key>notes</key>
+    <type>string</type>
+  </param>  -->
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) 
+  <sink>
+    <name>in</name>
+    <type>$intype</type>
+    <vlen>$vec_length</vlen>
+  </sink> -->
+
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <!--<source>-->
+    <!--<name>out</name>-->
+    <!--<type> e.g. int, float, complex, byte, short, xxx_vector, ...</type>-->
+  <!--</source>-->
+</block>
