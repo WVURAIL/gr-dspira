@@ -18,5 +18,8 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    spectrometer_output_spectrometer_output.xml DESTINATION share/gnuradio/grc/blocks
+    spectrometer_output_spectrometer_output.xml
+    spectrometer_output_spectrometer_display.xml
+    spectrometer_output_horn_calibration.xml
+    spectrometer_output_systemp_calibration.xml DESTINATION share/gnuradio/grc/blocks
 )

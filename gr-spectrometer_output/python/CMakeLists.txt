@@ -31,7 +31,10 @@ endif()
 GR_PYTHON_INSTALL(
     FILES
     __init__.py
-    spectrometer_output.py DESTINATION ${GR_PYTHON_DIR}/spectrometer_output
+    spectrometer_output.py
+    spectrometer_display.py
+    horn_calibration.py
+    systemp_calibration.py DESTINATION ${GR_PYTHON_DIR}/spectrometer_output
 )
 
 ########################################################################
@@ -42,3 +45,6 @@ include(GrTest)
 set(GR_TEST_TARGET_DEPS gnuradio-spectrometer_output)
 set(GR_TEST_PYTHON_DIRS ${CMAKE_BINARY_DIR}/swig)
 GR_ADD_TEST(qa_spectrometer_output ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_spectrometer_output.py)
+GR_ADD_TEST(qa_spectrometer_display ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_spectrometer_display.py)
+GR_ADD_TEST(qa_horn_calibration ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_horn_calibration.py)
+GR_ADD_TEST(qa_systemp_calibration ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_systemp_calibration.py)
