@@ -31,8 +31,8 @@ except ImportError:
 	pass
 
 # import any pure python here
-from spectrometer_output import spectrometer_output
-from spectrometer_display import spectrometer_display
-from horn_calibration import horn_calibration
+#from spectrometer_output import spectrometer_output
+#from spectrometer_display import spectrometer_display
+#from horn_calibration import horn_calibration
 from systemp_calibration import systemp_calibration
 #
