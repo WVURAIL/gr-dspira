@@ -1,0 +1,30 @@
+INCLUDE(FindPkgConfig)
+PKG_CHECK_MODULES(PC_CALIBRATION calibration)
+
+FIND_PATH(
+    CALIBRATION_INCLUDE_DIRS
+    NAMES calibration/api.h
+    HINTS $ENV{CALIBRATION_DIR}/include
+        ${PC_CALIBRATION_INCLUDEDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/include
+          /usr/local/include
+          /usr/include
+)
+
+FIND_LIBRARY(
+    CALIBRATION_LIBRARIES
+    NAMES gnuradio-calibration
+    HINTS $ENV{CALIBRATION_DIR}/lib
+        ${PC_CALIBRATION_LIBDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/lib
+          ${CMAKE_INSTALL_PREFIX}/lib64
+          /usr/local/lib
+          /usr/local/lib64
+          /usr/lib
+          /usr/lib64
+)
+
+INCLUDE(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(CALIBRATION DEFAULT_MSG CALIBRATION_LIBRARIES CALIBRATION_INCLUDE_DIRS)
+MARK_AS_ADVANCED(CALIBRATION_LIBRARIES CALIBRATION_INCLUDE_DIRS)
+
